@@ -68,19 +68,23 @@ def get_access_token():
 
 
 def get_image_base64(keyword):
-    """Generate image and return as base64 data URL."""
+    """Try Pollinations first, fall back to Picsum."""
+    # Try Pollinations
     clean = urllib.parse.quote(f"{keyword[:60]}, anime style, digital illustration, futuristic, vibrant colors")
-    url = f"https://image.pollinations.ai/prompt/{clean}?width=800&height=420&model=flux-anime&nologo=true"
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=90) as resp:
-            content_type = resp.headers.get('Content-Type', '')
-            data = resp.read()
-            if 'image' in content_type:
-                b64 = base64.b64encode(data).decode()
-                return f"data:{content_type.split(';')[0]};base64,{b64}"
-    except Exception as e:
-        print(f"Image error: {e}")
+    poll_url = f"https://image.pollinations.ai/prompt/{clean}?width=800&height=420&model=flux-anime&nologo=true"
+    for url in [poll_url, "https://picsum.photos/800/420"]:
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                content_type = resp.headers.get('Content-Type', 'image/jpeg')
+                data = resp.read()
+                if data[:4] in (b'\xff\xd8\xff\xe0', b'\xff\xd8\xff\xe1', b'\x89PNG'):
+                    mime = 'image/jpeg' if data[:2] == b'\xff\xd8' else 'image/png'
+                    b64 = base64.b64encode(data).decode()
+                    print(f"Image ok from: {url[:40]}")
+                    return f"data:{mime};base64,{b64}"
+        except Exception as e:
+            print(f"Image error ({url[:40]}): {e}")
     return None
 
 
