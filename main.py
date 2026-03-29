@@ -41,9 +41,8 @@ def get_trending_topics():
 
 
 def get_image_url(topics):
-    keyword = topics[0].split()[0] if topics else "AI"
-    keyword = urllib.parse.quote(f"{keyword},artificial intelligence,technology")
-    return f"https://source.unsplash.com/1200x630/?{keyword}"
+    seed = urllib.parse.quote(topics[0].split()[0] if topics else "AI")
+    return f"https://picsum.photos/seed/{seed}/1200/630"
 
 
 def generate_post(topics):
