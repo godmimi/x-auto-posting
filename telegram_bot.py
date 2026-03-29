@@ -137,16 +137,22 @@ def main():
 
         if chat_id != TELEGRAM_CHAT_ID:
             continue
-        if not text.startswith('http'):
+        if not text:
             continue
 
-        print(f"Processing URL: {text}")
-        telegram_send(f"📥 URL received! Generating post...\n{text}")
-
-        content = fetch_url_content(text)
-        if not content:
-            telegram_send("❌ Failed to fetch URL content.")
-            continue
+        if text.startswith('http'):
+            print(f"Processing URL: {text}")
+            telegram_send(f"📥 URL received! Generating post...")
+            content = fetch_url_content(text)
+            if not content:
+                telegram_send("❌ Failed to fetch URL content.")
+                continue
+        else:
+            if len(text) < 50:
+                continue
+            print(f"Processing text: {text[:50]}...")
+            telegram_send(f"📥 Text received! Generating post...")
+            content = text[:3000]
 
         html = generate_post(content, text)
         title = extract_title(html)
