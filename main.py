@@ -57,13 +57,19 @@ def get_image_base64(prompt):
         try:
             req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
             with urllib.request.urlopen(req, timeout=90) as resp:
+                if resp.status != 200:
+                    raise Exception(f"HTTP {resp.status}")
                 data = resp.read()
-                if data[:2] in (b'\xff\xd8', b'\x89P'):
-                    mime = 'image/jpeg' if data[:2] == b'\xff\xd8' else 'image/png'
-                    b64 = base64.b64encode(data).decode()
-                    return f"data:{mime};base64,{b64}"
+                if len(data) < 10000:
+                    raise Exception(f"Image too small: {len(data)} bytes")
+                if data[:2] not in (b'\xff\xd8', b'\x89P'):
+                    raise Exception("Not a valid image")
+                mime = 'image/jpeg' if data[:2] == b'\xff\xd8' else 'image/png'
+                b64 = base64.b64encode(data).decode()
+                print(f"Image ok: {url[:40]} ({len(data)} bytes)")
+                return f"data:{mime};base64,{b64}"
         except Exception as e:
-            print(f"Image error: {e}")
+            print(f"Image failed ({url[:40]}): {e}")
     return None
 
 
