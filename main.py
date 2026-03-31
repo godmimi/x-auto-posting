@@ -164,7 +164,7 @@ HTML:
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 24px;">[행동 유도 마무리 문장]</p>
 
 <div style="background:#f8fafc;border-radius:10px;padding:14px 18px;border:0.5px solid #e2e8f0;">
-<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">GeezonAI는</strong> 매일 AI 자동화 최신 내용을 업데이트합니다. 구독하고 놓치지 마세요! 🔔</p>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">Geez on AI는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
 </div>
 
 [어투] 친근한 존댓말(~요, ~어요), 독자에게 직접 말하는 느낌
