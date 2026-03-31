@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install anthropic
+        run: pip install -r requirements.txt
       - name: Run blog post script
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -24,4 +24,6 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           BLOG_ID: ${{ secrets.BLOG_ID }}
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+          CHARACTER_IMAGE_URL: ${{ secrets.CHARACTER_IMAGE_URL }}
         run: python main.py
