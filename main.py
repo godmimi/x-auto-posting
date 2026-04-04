@@ -465,6 +465,7 @@ def generate_post(topics):
 
     image_bytes, mime_type = generate_manga_image(manga_prompt, character_bytes)
 
+    image_url = None
     if image_bytes:
         image_bytes = add_korean_text_to_manga(image_bytes, text1, text2)
         image_url = upload_to_imgbb(image_bytes)
@@ -481,17 +482,20 @@ def generate_post(topics):
         html = html.replace("[이미지 자리 — 코드에서 자동 삽입됨]", "")
         print("이미지 생성 실패 — 이미지 없이 포스팅")
 
-    return title, html, labels
+    return title, html, labels, image_url
 
 
-def post_to_blogger(access_token, title, content, labels):
+def post_to_blogger(access_token, title, content, labels, image_url=None):
     url = f'https://www.googleapis.com/blogger/v3/blogs/{BLOG_ID}/posts/'
-    data = json.dumps({
+    post_data = {
         'kind': 'blogger#post',
         'title': title,
         'content': content,
         'labels': labels
-    }).encode()
+    }
+    if image_url:
+        post_data['images'] = [{'url': image_url}]
+    data = json.dumps(post_data).encode()
     req = urllib.request.Request(url, data=data, headers={
         'Authorization': f'Bearer {access_token}',
         'Content-Type': 'application/json'
@@ -510,11 +514,11 @@ def main():
     print(f"시작: {datetime.now()}")
     topics = get_trending_topics()
     print(f"트렌드 토픽: {topics[:3]}")
-    title, html_content, labels = generate_post(topics)
+    title, html_content, labels, image_url = generate_post(topics)
     print(f"제목: {title}")
     print(f"라벨: {labels}")
     access_token = get_access_token()
-    post_to_blogger(access_token, title, html_content, labels)
+    post_to_blogger(access_token, title, html_content, labels, image_url)
     print("완료!")
 
 
