@@ -46,7 +46,8 @@ def get_trending_topics():
         'AI+자동화+OR+업무+자동화+OR+스마트워크',
     ]
     query = random.choice(queries)
-    url = f'https://news.google.com/rss/search?q={query}&hl=ko&gl=KR&ceid=KR:ko'
+    encoded_query = urllib.parse.quote(query.replace('+', ' '))
+    url = f'https://news.google.com/rss/search?q={encoded_query}&hl=ko&gl=KR&ceid=KR:ko'
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
