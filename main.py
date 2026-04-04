@@ -193,6 +193,14 @@ def add_korean_text_to_manga(image_bytes, text1, text2):
             continue
 
     panel_w = width // 2
+    border = 4
+
+    # 각 패널 테두리
+    draw.rectangle([0, 0, panel_w, height - 1], outline='black', width=border)
+    draw.rectangle([panel_w, 0, width - 1, height - 1], outline='black', width=border)
+    # 가운데 구분선 (굵게)
+    draw.rectangle([panel_w - border, 0, panel_w + border, height - 1], fill='black')
+
     centers = [
         (panel_w // 2, int(height * 0.12)),
         (panel_w + panel_w // 2, int(height * 0.12)),
