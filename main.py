@@ -173,14 +173,18 @@ def generate_manga_image(prompt, character_bytes=None):
 
 
 def add_korean_text_to_manga(image_bytes, text1, text2):
-    """Pillow로 한국어 말풍선 텍스트 직접 삽입"""
     from PIL import Image, ImageDraw, ImageFont
 
     img = Image.open(io.BytesIO(image_bytes)).convert("RGBA")
     width, height = img.size
-    draw = ImageDraw.Draw(img)
 
-    font_size = max(18, height // 18)
+    # 상단에 말풍선 전용 영역 추가
+    bubble_area_h = max(80, height // 5)
+    new_img = Image.new("RGBA", (width, height + bubble_area_h), "white")
+    new_img.paste(img, (0, bubble_area_h))
+    draw = ImageDraw.Draw(new_img)
+
+    font_size = max(20, bubble_area_h // 3)
     font = ImageFont.load_default()
     for fp in [
         "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
@@ -195,30 +199,30 @@ def add_korean_text_to_manga(image_bytes, text1, text2):
     panel_w = width // 2
     border = 4
 
-    # 각 패널 테두리
-    draw.rectangle([0, 0, panel_w, height - 1], outline='black', width=border)
-    draw.rectangle([panel_w, 0, width - 1, height - 1], outline='black', width=border)
-    # 가운데 구분선 (굵게)
-    draw.rectangle([panel_w - border, 0, panel_w + border, height - 1], fill='black')
+    # 패널 구분선
+    draw.rectangle(
+        [panel_w - border, bubble_area_h, panel_w + border, height + bubble_area_h],
+        fill='black'
+    )
 
-    centers = [
-        (panel_w // 2, int(height * 0.12)),
-        (panel_w + panel_w // 2, int(height * 0.12)),
-    ]
-
-    for text, (cx, cy) in zip([text1, text2], centers):
+    def draw_bubble(cx, cy, text):
         bbox = draw.textbbox((0, 0), text, font=font)
         tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        pad = 14
-        draw.rounded_rectangle(
-            [cx - tw // 2 - pad, cy - th // 2 - pad,
-             cx + tw // 2 + pad, cy + th // 2 + pad],
-            radius=16, fill='white', outline='black', width=3
-        )
+        pad = 16
+        bx0 = max(4, cx - tw // 2 - pad)
+        by0 = max(4, cy - th // 2 - pad)
+        bx1 = min(width - 4, cx + tw // 2 + pad)
+        by1 = min(bubble_area_h - 4, cy + th // 2 + pad)
+        draw.rounded_rectangle([bx0, by0, bx1, by1],
+            radius=14, fill='white', outline='black', width=3)
         draw.text((cx - tw // 2, cy - th // 2), text, fill='black', font=font)
 
+    cy = bubble_area_h // 2
+    draw_bubble(panel_w // 2, cy, text1)
+    draw_bubble(panel_w + panel_w // 2, cy, text2)
+
     output = io.BytesIO()
-    img.convert("RGB").save(output, format='PNG')
+    new_img.convert("RGB").save(output, format='PNG')
     return output.getvalue()
 
 
