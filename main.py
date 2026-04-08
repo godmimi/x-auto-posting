@@ -535,7 +535,36 @@ def generate_post(topics, force_type=None):
     topic_str = main_topic + (f" (관련 트렌드: {ref_topics})" if ref_topics else "")
 
     # 유형 판단
-    post_type = force_type if force_type else classify_topic(client, topic_str)
+    if force_type:
+        post_type = force_type
+    else:
+        import random
+
+        # 50:50으로 A/B 랜덤 결정
+        post_type = random.choice(['A', 'B'])
+
+        # A타입이면 튜토리얼 주제 풀에서 선택
+        TUTORIAL_TOPICS = [
+            "ChatGPT 처음 시작하는 법 - 가입부터 첫 질문까지",
+            "Claude vs ChatGPT - 직장인에게 맞는 AI 고르는 법",
+            "AI로 회의록 자동 작성하는 법",
+            "ChatGPT 프롬프트 잘 쓰는 법 5가지",
+            "무료로 AI 이미지 만드는 법",
+            "바이브코딩으로 앱 만드는 법 - 코딩 몰라도 가능",
+            "Claude 무료로 시작하는 법",
+            "AI로 보고서 초안 작성하는 법",
+            "ChatGPT로 영어 이메일 쓰는 법",
+            "AI 프롬프트 템플릿 - 직장인 필수 5가지",
+            "Gemini로 구글 문서 자동화하는 법",
+            "노코드로 업무 자동화하는 법",
+        ]
+
+        if post_type == 'A':
+            topic_str = random.choice(TUTORIAL_TOPICS)
+        else:
+            # B타입은 기존처럼 RSS 뉴스 사용
+            topic_str = main_topic + (f" (관련 트렌드: {ref_topics})" if ref_topics else "")
+
     print(f"글 유형: TYPE {post_type}")
 
     user_prompt_template = USER_PROMPT_TYPE_A if post_type == 'A' else USER_PROMPT_TYPE_B
