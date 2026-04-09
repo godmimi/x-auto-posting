@@ -281,7 +281,7 @@ HTML:
 [이미지 자리 — 코드에서 자동 삽입됨]
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 2px;">안녕하세요</p>
-<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 Geez 입니다🤖</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 AIgent Labs 입니다🤖</p>
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[~하고 있지 않으신가요? 글 주제와 딱 맞는 공감형 첫 문장]</p>
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[공감 이어가는 두 번째 문장]</p>
@@ -394,7 +394,7 @@ HTML:
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 24px;">[행동 유도 마무리 문장]</p>
 
 <div style="background:#f8fafc;border-radius:10px;padding:14px 18px;border:0.5px solid #e2e8f0;">
-<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">Geez on AI는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">AIgent Labs는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
 </div>
 
 [어투] 친근한 존댓말(~요, ~어요), 어렵지 않게
@@ -419,7 +419,7 @@ HTML:
 [이미지 자리 — 코드에서 자동 삽입됨]
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 2px;">안녕하세요</p>
-<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 Geez 입니다🤖</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 AIgent Labs 입니다🤖</p>
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[이슈를 처음 접한 독자 입장의 공감형 첫 문장]</p>
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[이슈의 파장이나 중요성을 설명하는 두 번째 문장]</p>
@@ -506,7 +506,7 @@ HTML:
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 24px;">[독자에게 앞으로 어떻게 대처하면 좋을지 행동 유도 문장]</p>
 
 <div style="background:#f8fafc;border-radius:10px;padding:14px 18px;border:0.5px solid #e2e8f0;">
-<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">Geez on AI는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">AIgent Labs는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
 </div>
 
 [어투] 친근한 존댓말(~요, ~어요), 어렵지 않게
@@ -532,7 +532,7 @@ HTML:
 [이미지 자리 — 코드에서 자동 삽입됨]
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 2px;">안녕하세요</p>
-<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 Geez 입니다🤖</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 AIgent Labs 입니다🤖</p>
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[핵심 공감 첫 문장 — 짧고 임팩트 있게]</p>
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[바로 해결해준다는 두 번째 문장]</p>
@@ -576,7 +576,7 @@ HTML:
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[마무리 — 짧고 가볍게]</p>
 
 <div style="background:#f8fafc;border-radius:10px;padding:14px 18px;border:0.5px solid #e2e8f0;">
-<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">Geez on AI는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">AIgent Labs는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
 </div>
 
 [어투] 친근한 존댓말, 짧고 임팩트 있게
