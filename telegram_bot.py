@@ -262,7 +262,7 @@ HTML:
 [이미지 자리 — 코드에서 자동 삽입됨]
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 2px;">안녕하세요</p>
-<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 Geez 입니다🤖</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 AIgent Labs 입니다🤖</p>
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[공감형 첫 문장]</p>
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[두 번째 문장]</p>
@@ -342,7 +342,7 @@ HTML:
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 24px;">[행동 유도 마무리]</p>
 
 <div style="background:#f8fafc;border-radius:10px;padding:14px 18px;border:0.5px solid #e2e8f0;">
-<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">Geez on AI는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">AIgent Labs는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
 </div>
 
 [어투] 친근한 존댓말, 800~1200자, 마크다운/코드블록 금지"""
@@ -365,7 +365,7 @@ HTML:
 [이미지 자리 — 코드에서 자동 삽입됨]
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 2px;">안녕하세요</p>
-<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 Geez 입니다🤖</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 AIgent Labs 입니다🤖</p>
 
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[이슈 공감 첫 문장]</p>
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[이슈 파장 두 번째 문장]</p>
@@ -403,7 +403,7 @@ HTML:
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 24px;">[행동 유도 마무리]</p>
 
 <div style="background:#f8fafc;border-radius:10px;padding:14px 18px;border:0.5px solid #e2e8f0;">
-<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">Geez on AI는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">AIgent Labs는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
 </div>
 
 [어투] 친근한 존댓말, 800~1200자
