@@ -271,7 +271,8 @@ HTML:
 <p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 24px;">[응원 마무리😊]</p>
 
 <div style="border-left:3px solid #2563EB;padding:12px 16px;background:#f8fafc;margin-bottom:24px;">
-<p style="font-size:14px;color:#1e293b;line-height:1.7;margin:0;">💡 <strong>핵심 포인트</strong> — [한 문장 핵심 요약]</p>
+<p style="font-size:12px;font-weight:600;color:#2563EB;margin:0 0 6px;">💡 핵심 포인트</p>
+<p style="font-size:14px;color:#1e293b;line-height:1.6;margin:0;word-break:keep-all;overflow-wrap:break-word;">[한 문장 핵심 요약]</p>
 </div>
 
 <div style="border:0.5px solid #e2e8f0;border-radius:10px;overflow:hidden;margin-bottom:28px;">
