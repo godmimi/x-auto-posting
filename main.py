@@ -205,23 +205,28 @@ HTML:
 [HTML 전체 내용]
 
 [글 유형 판단 규칙]
-TYPE A — 튜토리얼/사용법/입문 가이드
-  → 준비물, 실행방법, 프롬프트 템플릿 포함
-  예) Claude 설치법, ChatGPT 회의록 자동화, AI 이미지 생성 방법
+TYPE A — 튜토리얼/사용법/입문 가이드 (상세)
+  → 준비물, 실행방법, 프롬프트 템플릿 3개 포함
+  예) Claude 설치법, ChatGPT 회의록 자동화
 
-TYPE B — 뉴스/이슈 분석/트렌드 정리
+TYPE B — 뉴스/이슈 분석
   → 팩트체크, 이슈 분석 카드 포함. 준비물/실행방법/프롬프트 없음
-  예) AI 업계 사건사고, 신규 모델 출시, 정책 변화, 보안 이슈
+  예) AI 업계 사건사고, 신규 모델 출시, 보안 이슈
 
-주제를 보고 A/B 중 자동으로 판단해서 해당 HTML 구조를 사용해.
+TYPE C — 빠른 실행 가이드 (간결)
+  → 3~4단계 + 프롬프트 1개만. 준비물/주의사항 없음. 짧고 임팩트 있게
+  예) 10분 안에 할 수 있는 AI 활용법
 
-[제목 형식 규칙]
-- TYPE A: [핵심 주제] [N단계/N가지] - [결과나 혜택] [이모지] [2026년]
-- TYPE B: [핵심 이슈] [N가지 핵심] - [한줄 요약] [이모지] [2026년]
+유형은 generate_post에서 랜덤으로 결정됨.
+
+[제목 형식 규칙 — 이모지/연도 없음]
+- TYPE A: [핵심 주제] [N단계/N가지] - 지금 당장 써먹기
+- TYPE B: [핵심 이슈] [N가지] - 팩트만 체크하기
+- TYPE C: [핵심 주제] - 10분이면 충분해
 - N은 3~7 사이 자유롭게
-- 이모지는 매번 다르게 (🚀 ⚡ 💡 🔥 ✅ 🎯 🛠️ 📌 중 하나)
 - 반드시 하이픈(-)으로 앞뒤 구분
-- 끝에 반드시 [2026년] 포함
+- 이모지 사용 금지
+- 연도 표기 금지
 - 같은 패턴 반복 금지
 
 [라벨 규칙]
@@ -510,6 +515,75 @@ HTML:
 [TYPE B 절대 금지] 준비물 섹션, 실행방법 섹션, 프롬프트 템플릿 섹션 사용 금지"""
 
 
+# =============================================
+# TYPE C 템플릿
+# =============================================
+
+USER_PROMPT_TYPE_C = """다음 주제로 한국어 블로그 글을 HTML 형식으로 작성해줘. (TYPE C — 빠른 실행)
+
+주제: {topic}
+
+TITLE: [핵심 주제] - 10분이면 충분해
+TYPE: C
+LABELS: [관련 라벨 2~3개]
+INTRO: [도입부 3문장 텍스트]
+HTML:
+
+[이미지 자리 — 코드에서 자동 삽입됨]
+
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 2px;">안녕하세요</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 20px;">하루에 2번, 우리 일상에 도움이 될 AI 꿀팁을 전해드리는 Geez 입니다🤖</p>
+
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[핵심 공감 첫 문장 — 짧고 임팩트 있게]</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[바로 해결해준다는 두 번째 문장]</p>
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 24px;">[따라오면 10분이면 된다는 응원 문장😊]</p>
+
+<div style="border-left:3px solid #2563EB;padding:12px 16px;background:#f8fafc;margin-bottom:24px;">
+<p style="font-size:14px;color:#1e293b;line-height:1.7;margin:0;">💡 <strong>핵심 포인트</strong> — [한 문장 핵심 요약]</p>
+</div>
+
+<h2 style="font-size:17px;font-weight:600;color:#1e293b;border-bottom:1px solid #e2e8f0;padding-bottom:10px;margin:32px 0 16px;">바로 따라하기</h2>
+
+<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+<div style="width:26px;height:26px;min-width:26px;border-radius:50%;background:#2563EB;display:flex;align-items:center;justify-content:center;margin-top:2px;"><span style="font-size:12px;font-weight:600;color:#fff;">1</span></div>
+<div>
+<p style="font-size:14px;font-weight:500;color:#1e293b;margin:0 0 4px;">[단계 제목]</p>
+<p style="font-size:13px;color:#475569;line-height:1.7;margin:0;">[한 문장 설명]</p>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+<div style="width:26px;height:26px;min-width:26px;border-radius:50%;background:#2563EB;display:flex;align-items:center;justify-content:center;margin-top:2px;"><span style="font-size:12px;font-weight:600;color:#fff;">2</span></div>
+<div>
+<p style="font-size:14px;font-weight:500;color:#1e293b;margin:0 0 4px;">[단계 제목]</p>
+<p style="font-size:13px;color:#475569;line-height:1.7;margin:0;">[한 문장 설명]</p>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+<div style="width:26px;height:26px;min-width:26px;border-radius:50%;background:#2563EB;display:flex;align-items:center;justify-content:center;margin-top:2px;"><span style="font-size:12px;font-weight:600;color:#fff;">3</span></div>
+<div>
+<p style="font-size:14px;font-weight:500;color:#1e293b;margin:0 0 4px;">[단계 제목]</p>
+<p style="font-size:13px;color:#475569;line-height:1.7;margin:0;">[한 문장 설명]</p>
+</div>
+</div>
+
+<h2 style="font-size:17px;font-weight:600;color:#1e293b;border-bottom:1px solid #e2e8f0;padding-bottom:10px;margin:32px 0 16px;">📋 바로 쓰는 프롬프트</h2>
+
+<div style="background:#1e293b;border-radius:10px;padding:16px 18px;margin-bottom:24px;">
+<p style="font-size:11px;font-weight:600;color:#94a3b8;margin:0 0 8px;letter-spacing:0.05em;">복붙하고 바로 써요</p>
+<p style="font-size:12px;color:#e2e8f0;line-height:1.9;margin:0;">[핵심 프롬프트 1개 — 바로 쓸 수 있는 내용]</p>
+</div>
+
+<p style="font-size:15px;line-height:1.8;color:#1e293b;margin:0 0 8px;">[마무리 — 짧고 가볍게]</p>
+
+<div style="background:#f8fafc;border-radius:10px;padding:14px 18px;border:0.5px solid #e2e8f0;">
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.7;">📌 <strong style="color:#1e293b;">Geez on AI는</strong> 매일 AI에 관련된 최신 내용들을 업데이트하며, 모든 포스팅은 Claude를 이용해 자동으로 생성됩니다 🤖</p>
+</div>
+
+[어투] 친근한 존댓말, 짧고 임팩트 있게
+[분량] 400~600자 (A타입보다 훨씬 짧게)
+[절대 금지] 마크다운 금지, 코드블록 금지, 준비물/주의사항 섹션 금지"""
+
+
 def reframe_as_tutorial(client, news_topic):
     msg = client.messages.create(
         model="claude-haiku-4-5-20251001",
@@ -542,7 +616,7 @@ def generate_post(topics, force_type=None):
         import random
 
         # 50:50으로 A/B 랜덤 결정
-        post_type = random.choice(['A', 'B'])
+        post_type = random.choice(['A', 'B', 'C'])
 
         if post_type == 'A':
             topic_str = reframe_as_tutorial(client, main_topic)
@@ -552,7 +626,7 @@ def generate_post(topics, force_type=None):
 
     print(f"글 유형: TYPE {post_type}")
 
-    user_prompt_template = USER_PROMPT_TYPE_A if post_type == 'A' else USER_PROMPT_TYPE_B
+    user_prompt_template = USER_PROMPT_TYPE_A if post_type == 'A' else USER_PROMPT_TYPE_B if post_type == 'B' else USER_PROMPT_TYPE_C
     user_prompt = user_prompt_template.format(topic=topic_str)
 
     message = client.messages.create(
