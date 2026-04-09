@@ -367,7 +367,7 @@ HTML:
 
 <div style="margin-bottom:16px;">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-<span style="font-size:12px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;">⚠ 주의 01</span>
+<span style="font-size:11px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;white-space:nowrap;">⚠ 01</span>
 <span style="font-size:14px;font-weight:500;color:#1e293b;">[주의 제목]</span>
 </div>
 <p style="font-size:13px;color:#475569;line-height:1.7;margin:0 0 4px;padding-left:4px;">[주의 설명 첫 문장]</p>
@@ -375,7 +375,7 @@ HTML:
 </div>
 <div style="margin-bottom:16px;">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-<span style="font-size:12px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;">⚠ 주의 02</span>
+<span style="font-size:11px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;white-space:nowrap;">⚠ 02</span>
 <span style="font-size:14px;font-weight:500;color:#1e293b;">[주의 제목]</span>
 </div>
 <p style="font-size:13px;color:#475569;line-height:1.7;margin:0 0 4px;padding-left:4px;">[주의 설명 첫 문장]</p>
@@ -383,7 +383,7 @@ HTML:
 </div>
 <div style="margin-bottom:16px;">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-<span style="font-size:12px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;">⚠ 주의 03</span>
+<span style="font-size:11px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;white-space:nowrap;">⚠ 03</span>
 <span style="font-size:14px;font-weight:500;color:#1e293b;">[주의 제목]</span>
 </div>
 <p style="font-size:13px;color:#475569;line-height:1.7;margin:0 0 4px;padding-left:4px;">[주의 설명 첫 문장]</p>
@@ -487,7 +487,7 @@ HTML:
 
 <div style="margin-bottom:16px;">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-<span style="font-size:12px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;">⚠ 주의 01</span>
+<span style="font-size:11px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;white-space:nowrap;">⚠ 01</span>
 <span style="font-size:14px;font-weight:500;color:#1e293b;">[주의 제목]</span>
 </div>
 <p style="font-size:13px;color:#475569;line-height:1.7;margin:0 0 4px;padding-left:4px;">[주의 설명 첫 문장]</p>
@@ -495,7 +495,7 @@ HTML:
 </div>
 <div style="margin-bottom:16px;">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-<span style="font-size:12px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;">⚠ 주의 02</span>
+<span style="font-size:11px;font-weight:600;color:#B45309;background:#FEF3C7;padding:3px 10px;border-radius:99px;border:0.5px solid #D97706;white-space:nowrap;">⚠ 02</span>
 <span style="font-size:14px;font-weight:500;color:#1e293b;">[주의 제목]</span>
 </div>
 <p style="font-size:13px;color:#475569;line-height:1.7;margin:0 0 4px;padding-left:4px;">[주의 설명 첫 문장]</p>
