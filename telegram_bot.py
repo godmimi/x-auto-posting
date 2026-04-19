@@ -70,6 +70,14 @@ def main():
         if len(text) < 10:
             continue
 
+        # 타입 수동 지정 파싱
+        type_match = re.search(r'\b([abc])(로해줘|타입)\b', text, re.IGNORECASE)
+        if type_match:
+            post_type = type_match.group(1).upper()
+            text = re.sub(r'\s*\b[abc](로해줘|타입)\b', '', text, flags=re.IGNORECASE).strip()
+        else:
+            post_type = None
+
         # URL이면 크롤링
         if re.match(r'https?://', text):
             send("🔍 URL 분석 중...")
@@ -85,7 +93,8 @@ def main():
         send("✍️ 글 생성 중...")
 
         try:
-            post_type = classify_type(content)
+            if post_type is None:
+                post_type = classify_type(content)
 
             # 구글 블로그용 HTML 생성 → 자동 포스팅
             html_result = generate_html_post(content, url, post_type)
