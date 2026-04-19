@@ -18,8 +18,12 @@ def get_access_token() -> str:
         'client_secret': GOOGLE_CLIENT_SECRET
     }).encode()
     req = urllib.request.Request('https://oauth2.googleapis.com/token', data=data)
-    with urllib.request.urlopen(req) as resp:
-        return json.loads(resp.read())['access_token']
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read())['access_token']
+    except urllib.error.HTTPError as e:
+        body = e.read().decode('utf-8', errors='replace')
+        raise Exception(f"[토큰 오류] HTTP {e.code}: {body[:300]}")
 
 
 def post_to_blogger(access_token: str, title: str, html_content: str, image_url: str, labels: list) -> str:
@@ -50,5 +54,4 @@ def post_to_blogger(access_token: str, title: str, html_content: str, image_url:
             return post_url
     except urllib.error.HTTPError as e:
         body = e.read().decode('utf-8', errors='replace')
-        print(f"Blogger 에러 {e.code}: {body}")
-        raise Exception(f"HTTP {e.code}: {body[:300]}")
+        raise Exception(f"[Blogger 오류] HTTP {e.code}: {body[:300]}")
