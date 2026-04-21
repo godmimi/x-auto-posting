@@ -96,21 +96,6 @@ def main():
             if post_type is None:
                 post_type = classify_type(content)
 
-            # 구글 블로그용 HTML 생성 → 자동 포스팅
-            html_result = generate_html_post(content, url, post_type)
-            try:
-                access_token = get_access_token()
-                post_url = post_to_blogger(
-                    access_token,
-                    html_result['title'],
-                    html_result['html_content'],
-                    '',  # 이미지 없음
-                    html_result['labels']
-                )
-                send(f"✅ 구글 블로그 포스팅 완료!\n{post_url}")
-            except Exception as e:
-                send(f"⚠️ 구글 블로그 포스팅 실패: {e}")
-
             # 네이버 블로그용 텍스트 생성 → Telegram 전송
             text_post = generate_text_post(content, url, post_type)
             send(f"📝 [네이버 블로그용]\n\n{text_post}")
